@@ -293,7 +293,10 @@ public class AwsBatchBuilder  extends Builder {
             // set that to properties and call save().
             //System.out.println(json.toString());
             if(json.containsKey("logPollingFreq")) {
-                logPollingFreq = json.getInt("logPollingFreq");
+                Object logPollingFreqType = json.get("logPollingFreq");
+                if(logPollingFreqType instanceof Integer){
+                    logPollingFreq = json.getInt("logPollingFreq");
+                }
             }
             else {
                 logPollingFreq = 15;
