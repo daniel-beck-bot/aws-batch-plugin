@@ -1,4 +1,5 @@
-# AWS Batch for Jenkins
+AWS Batch Plugin for Jenkins
+=======================
 
 A plugin which provides a "build step" which triggers a job on AWS Batch via Amazon's Java SDK.
 This is still very much WIP.
@@ -6,6 +7,7 @@ This is still very much WIP.
 ## Jobs DSL: support
 You can easily create AWS Batch jobs using the Jobs DSL, for example:
 
+```groovy
 job('Batch_demo_foo') {
   steps {
         aws_batch('test_batch', 
@@ -15,3 +17,4 @@ job('Batch_demo_foo') {
                         2, 1000, 1)
     }
 }
+```
